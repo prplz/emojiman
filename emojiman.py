@@ -17,7 +17,7 @@ def main():
 
     emojis = [v for k, v in emoji.EMOJI_UNICODE.iteritems() if not k.startswith(':flag_for_')]
 
-    print 'Current name:', name
+    print 'Current name:', repr(name)
 
     for e in emojis:
         if name.endswith(e):
@@ -25,7 +25,7 @@ def main():
 
     name += random.choice(emojis)
 
-    print 'New name:', name
+    print 'New name:', repr(name)
 
     api.update_profile(name=name)
 
