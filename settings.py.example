@@ -1,0 +1,2 @@
+oauth = ('key', 'secret')
+access_token = ('key', 'secret')
