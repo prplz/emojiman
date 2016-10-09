@@ -15,13 +15,15 @@ def main():
 
     name = me.name
 
-    emojis = [v for k, v in emoji.EMOJI_UNICODE.iteritems() if not k.startswith(':flag_for_')]
+    emojis = [v for k, v in emoji.EMOJI_UNICODE.iteritems() if
+              not (k.startswith(':flag_for_') or k.startswith(':keycap_'))]
 
     print 'Current name:', repr(name)
 
     for e in emojis:
         if name.endswith(e):
             name = name[:-len(e)]
+            break
 
     name += random.choice(emojis)
 
