@@ -11,9 +11,7 @@ def main():
     auth.set_access_token(*settings.access_token)
     api = tweepy.API(auth)
 
-    me = api.me()
-
-    name = me.name
+    name = api.update_profile().name
 
     emojis = [v for k, v in emoji.EMOJI_UNICODE.iteritems() if
               not (k.startswith(':flag_for_') or k.startswith(':keycap_'))]
